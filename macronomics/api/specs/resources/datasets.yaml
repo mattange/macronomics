@@ -1,0 +1,15 @@
+get:
+  summary: List of datasets for the chosen provider.
+  description: Obtain list of all dataset codes for the chosen provider and the related description.
+  tags:
+    - Currently available datasets for given provider
+  operationId: getDatasetsByProvider
+  responses:
+    200:
+      description: Success.
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '../schemas/dataset.yaml'

@@ -1,0 +1,12 @@
+get:
+  summary: Dataset details.
+  description: Obtain details of the specified dataset.
+  tags:
+    - Dataset description
+  responses:
+    200:
+      description: Success.
+      content:
+        application/json:
+          schema:
+            $ref: '../schemas/dataset.yaml'

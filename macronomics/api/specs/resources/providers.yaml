@@ -1,0 +1,15 @@
+get:
+  summary: List of providers.
+  description: Obtain list of all provider codes currently available.
+  tags:
+    - Currently available providers
+  operationId: getProviders
+  responses:
+    200:
+      description: Success.
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '../schemas/provider.yaml'

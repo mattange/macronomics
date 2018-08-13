@@ -1,0 +1,42 @@
+openapi: "3.0"
+info:
+  version: 1.0.0
+  title: Macronomics API
+  license:
+    name: MIT
+  contact:
+    name: Matteo Angeloni
+    email: mattange@gmail.com
+    #url: The URL pointing to the contact information. MUST be in the format of a URL.
+    #licence: The license information for the exposed API.
+    #termsOfService: A URL to the Terms of Service for the API. MUST be in the format of a URL.
+
+#servers:
+#  - url: http://petstore.swagger.io/v1
+
+paths:
+  /providers:
+    $ref: 'resources/providers.yaml'
+
+  /providers/{providerID}:
+    $ref: 'resources/provider-by-id.yaml'
+    
+  /providers/{providerID}/datasets:
+    $ref: 'resources/datasets.yaml'
+
+  /providers/{providerID}/datasets/{datasetID}:
+    $ref: 'resources/dataset-by-id.yaml'
+
+  /series/{seriesID}:
+    get:
+      summary: Series details.
+      description: Obtain the dataseries with the specified ID.
+      tags:
+        - Series content
+      responses:
+        200:
+          description: Success.
+          content:
+            application/json:
+            schema:
+              $ref: '#/components/schemas/Series'

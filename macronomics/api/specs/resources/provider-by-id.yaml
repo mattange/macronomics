@@ -1,0 +1,13 @@
+get:
+  summary: Provider details.
+  description: Obtain details of the specified provider.
+  tags:
+    - Provider description
+  operationId: getProviderById
+  responses:
+    200:
+      description: Success.
+      content:
+        application/json:
+          schema:
+            $ref: '../schemas/provider.yaml'
